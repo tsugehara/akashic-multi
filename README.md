@@ -1,78 +1,25 @@
-# typescript-game-sample
+# akashic serveのテスト用プロジェクト
 
-**typescript-game-sample**はTypeScriptでAkashicのゲームを作る際のサンプルプロジェクトです。
+## これは
 
-## 利用方法
+Akashic Engineでマルチプレーができるようになったので、それの評価用に書いてみようというもの。
 
- `typescript-game-sample` を利用するにはNode.jsが必要です。
+https://twitter.com/akashic_talk/status/1090137956789104640
 
-初回のみ、以下のコマンドを実行して、ビルドに必要なパッケージをインストールしてください。
-この作業は `typescript-game-sample` を新しく生成するごとに必要です。
+## 使い方
 
-```sh
-npm install
-```
+npm iしてnpm run multiすればサーバが動きます。
 
-### ビルド方法
+複数PCで動かす場合、package.jsonのmultiスクリプトのホスト名をいじればいいです。
 
-`typescript-game-sample` はTypeScriptで書かれているため、以下のコマンドでJavaScriptファイルに変換する必要があります。
+ブラウザで開いた後、Join Meを押してタップすれば、赤い四角が出現して攻撃できます。
 
-```sh
-npm run build
-```
+別のブラウザでまたJoin Meを押してタップすれば、青い四角が出現して攻撃できます。
 
-`src` ディレクトリ以下のTypeScriptファイルがコンパイルされ、`script` ディレクトリ以下にJavaScriptファイルが生成されます。
+攻撃の処理とかは特に作っていません悪しからず。
 
-`npm run build` は自動的に `akashic scan asset script` を実行するので、`game.json` の更新が行われます。
+## 補足事項
 
-### 動作確認方法
+公式の何かではありません。
 
-以下のどちらかを実行後、ブラウザで `http://localhost:3000/game/` にアクセスすることでゲームを実行できます。
-
-* `npm start`
-
-* `npm install -g @akashic/akashic-sandbox` 後、 `akashic-sandbox .`
-
-### アセットの更新方法
-
-各種アセットを追加したい場合は、それぞれのアセットファイルを以下のディレクトリに格納します。
-
-* 画像アセット: `image`
-* スクリプトアセット: `script`
-* テキストアセット: `text`
-* オーディオアセット: `audio`
-
-これらのアセットを追加・変更したあとに `npm run update` をすると、アセットの変更内容をもとに `game.json` を書き換えることができます。
-
-### npm モジュールの追加・削除
-
-`typescript-game-sample` でnpmモジュールを利用する場合、このディレクトリで `akashic install <package_name>` することで npm モジュールを追加することができます。
-
-また `akashic uninstall <package_name>` すると npm モジュールを削除することができます。
-
-## エクスポート方法
-
-`typescript-game-sample` をエクスポートするときは以下のコマンドを利用します。
-
-### htmlファイルのエクスポート
-
-`npm run export-html` のコマンドを利用することで `game` ディレクトリにエクスポートすることができます。
-
-`game/index.html` をブラウザで開くと単体動作させることができます。
-
-### zipファイルのエクスポート
-
-`npm run export-zip` のコマンドを利用することで `game.zip` という名前のzipファイルを出力できます。
-
-## テスト方法
-
-1. [TSLint](https://github.com/palantir/tslint "TSLint")を使ったLint
-2. [Jasmine](http://jasmine.github.io "Jasmine")を使ったテスト
-
-がそれぞれ実行されます。
-
-```sh
-npm test
-```
-
-テストコードのサンプルとして `spec/testSpec.js` を用意していますので参考にしてテストコードを記述して下さい。
+とりあえず`akashic serve` の動きを見たかっただけなので、あんまりちゃんとサンプルも読まずに書いてますので悪しからず。
